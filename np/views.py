@@ -50,7 +50,6 @@ def article_detail(request, pk):
     article = get_object_or_404(Article, pk=pk)
     return render(request, 'np/article_detail.html', {'article': article})
 
-# Create your views here.
 def article_list(request):
-    articles = Article.objects.order_by('-created_date')
+    articles = Article.objects.filter(created_date__lte=timezone.now()).order_by('-created_date')
     return render(request, 'np/article_list.html', {'articles': articles})
