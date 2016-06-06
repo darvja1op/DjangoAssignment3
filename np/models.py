@@ -5,7 +5,7 @@ class Article(models.Model):
 	author = models.ForeignKey('auth.User')
 	title = models.CharField(max_length=200)
 	section = models.CharField(max_length=200)
-	introductory_text = models.TextField()
+	introduction_text = models.TextField()
 	text = models.TextField()
 	url = models.URLField()
 	created_date = models.DateTimeField(default=timezone.now)
