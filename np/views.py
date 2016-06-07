@@ -51,5 +51,10 @@ def article_detail(request, pk):
     return render(request, 'np/article_detail.html', {'article': article})
 
 def article_list(request):
-    articles = Article.objects.filter(created_date__lte=timezone.now()).order_by('-created_date')
+    articles = Article.objects.filter(created_date__lte=timezone.now()).order_by('-created_date')[:5]
     return render(request, 'np/article_list.html', {'articles': articles})
+
+# def article_section(request, search):
+	# articles = Article.objects.filter(created_date_lte=timezone.now()).order_by('-created_date')
+	# articles = articles.filter(section=search)[:5]
+	# return render(request, 'np/article_list.html', {'articles': articles})
