@@ -7,6 +7,8 @@
 			<a class="btn btn-default" href="{% url 'article_remove' pk=article.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
 		{% endif %}
         <h1>{{ article.title }}</h1>
+		<img class="image" src="{{ article.url }}"></img>
+		<p>{{ article.introduction_text|linebreaks }}</p>
         <p>{{ article.text|linebreaks }}</p>
     </div>
 {% endblock %}

@@ -6,7 +6,8 @@
                 {{ article.created_date }}
             </div>
             <h1><a href="{% url 'article_detail' pk=article.pk %}">{{ article.title }}</a></h1>
-            <p>{{ article.text|linebreaks }}</p>
+			<img class="image" src="{{ article.url }}"></img>
+            <p>{{ article.introduction_text|linebreaks }}</p>
         </div>
     {% endfor %}
 {% endblock %}
